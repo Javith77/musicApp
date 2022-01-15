@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> MusicApp </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scroll-y="false">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">MusicApp</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <ion-slides pager="false" [options]="slidesOptions">
+      <ion-slides>
+        <ion-slide *ngFor="let item of slides" >
+          <div class="slide">
+            <img src="assets/img/{{item.image}}" />
+            <h2>{{ item.title }}</h2>
+            <p *ngIf="item.description">{{ item.description }}</p>
+            <ion-button fill="clear" *ngIf="item.button"  (click)="continue()" >Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-slides>
+  </div>
+</ion-content>
