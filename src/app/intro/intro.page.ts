@@ -25,11 +25,11 @@ export class IntroPage implements OnInit {
   }
 
   ngOnInit() {
-    this.storage.get('intro').then((val) => {
-      if (val) {
-        this.router.navigateByUrl('/home');
-      }
-    });
+    // this.storage.get('intro').then((val) => {
+    //   if (val) {
+    //     this.router.navigateByUrl('/home');
+    //   }
+    // });
     this.fillSlide();
   }
 

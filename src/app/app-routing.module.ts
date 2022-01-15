@@ -4,20 +4,21 @@ import { IntroGuard } from './guards/intro.guard';
 
 const routes: Routes = [
   {
-    path: 'intro',
-    loadChildren: () =>
-      import('./intro/intro.module').then((m) => m.IntroPageModule),
-  },
-  {
-    path: '',
-    redirectTo: 'intro',
-    pathMatch: 'full',
-  },
-  {
     path: 'home',
     loadChildren: () =>
       import('./home/home.module').then((m) => m.HomePageModule), canActivate:[IntroGuard],
   },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'intro',
+    loadChildren: () =>
+      import('./intro/intro.module').then((m) => m.IntroPageModule),
+  }
+
 ];
 
 @NgModule({
