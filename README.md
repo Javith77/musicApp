@@ -1,4 +1,4 @@
-# AppMusic
+# MusicApp
 <p>Aplicación de seminario ionic.</p>
 
 ### LOGIN PAGE
