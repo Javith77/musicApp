@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  goLogin(): void {
+    this.router.navigateByUrl('/login');
   }
 }

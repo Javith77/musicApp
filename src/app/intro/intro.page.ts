@@ -43,14 +43,14 @@ export class IntroPage implements OnInit {
       {
         title: 'Welcome',
         description:
-          'The <b>MusicApp</b> is a coordinated development practice for a seminar.',
+          'The MusicApp is a coordinated development practice for a seminar.',
         image: 'slide1.jpg',
         button: false,
       },
       {
         title: 'What is MusicApp?',
         description:
-          'The <b>MusicApp</b> to have fun with the best content programmed according to your needs.',
+          'The MusicApp to have fun with the best content programmed according to your needs.',
         image: 'slide2.jpg',
         button: false,
       },
