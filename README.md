@@ -1,0 +1,5 @@
+# musicApp
+
+- LOGIN PAGE
+- SLIDE PAGE
+- HOME PAGE
