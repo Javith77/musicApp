@@ -2,7 +2,7 @@
 <p>Aplicación de seminario ionic.</p>
 
 ### LOGIN PAGE
-![image](https://user-images.githubusercontent.com/31388947/149689457-01395dcb-7324-425f-adba-266b529a3aae.png)
+![image](https://user-images.githubusercontent.com/31388947/149690152-3fd6fad7-a1db-4835-948a-b4ae5b8eea0f.png)
 
 
 ### SLIDE PAGE
