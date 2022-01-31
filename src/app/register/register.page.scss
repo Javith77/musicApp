@@ -1,3 +1,6 @@
+ion-header ion-toolbar {
+  --border-width: 0;
+}
 .grid1 {
   height: 45%;
   padding: 0px;
@@ -8,9 +11,10 @@
   padding: 0px 10px 10px 10px;
   background: #ffffff;
   margin-top: -1.5rem;
-  .container-title {
-    max-width: 70%;
-    h1 {
+
+  .container-title{
+    max-width: 90%;
+    h1{
       font-size: 40px;
       margin-top: 0px;
       line-height: 1;
@@ -24,10 +28,10 @@
 }
 
 .img-container {
+  max-width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  justify-content: left;
+  align-items: flex-end;
   max-width: 100%;
 }
 
@@ -60,10 +64,6 @@ ion-icon {
 ion-button {
   margin-top: 5px;
   margin-bottom: 15px;
-  span {
-    color: #000;
-    margin-right: 5px;
-  }
 }
 
 ion-slide {

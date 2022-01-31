@@ -9,8 +9,8 @@
 
   <div class="container-login">
     <ion-row>
-      <ion-col>
-        <h1>MusicApp</h1>
+      <ion-col class="container-title">
+        <h1>Welcome back!</h1>
       </ion-col>
     </ion-row>
 
@@ -21,61 +21,43 @@
             <ion-list>
               <ion-item>
                 <ion-icon name="person" color="primary"></ion-icon>
-                <ion-input
-                  formControlName="username"
-                  name="user"
-                  type="text"
-                  required
-                  placeholder="Usuario"
-                ></ion-input>
-                <span
-                  slot="error"
-                  *ngIf="isSubmitted && loginForm.controls.username.errors?.required"
-                  >Este campo es requerido</span
-                >
-                <span
-                  slot="error"
-                  *ngIf="isSubmitted && loginForm.controls.username.errors?.minlength"
-                  >Usuario demasiado corto</span
-                >
+                <ion-input formControlName="mail" name="user" type="text" required placeholder="Email">
+                </ion-input>
+                <span slot="error" *ngIf="isSubmitted && loginForm.controls.mail.errors?.required">Este campo es
+                  Value is required.
+                </span>
+                <span slot="error" *ngIf="isSubmitted && loginForm.controls.mail.errors?.pattern">
+                  Invalid email address.
+                </span>
               </ion-item>
               <br />
               <ion-item>
                 <ion-icon name="lock-closed" color="primary"></ion-icon>
-                <ion-input
-                  formControlName="password"
-                  name="password"
-                  type="password"
-                  required
-                  placeholder="Contraseña"
-                ></ion-input>
-                <span
-                  slot="error"
-                  *ngIf="isSubmitted && loginForm.controls.password.errors?.required"
-                  >Este campo es requerido</span
-                >
-                <span
-                  slot="error"
-                  *ngIf="isSubmitted && loginForm.controls.password.errors?.minlength"
-                  >Contraseña demasiado corta</span
-                >
+                <ion-input formControlName="password" name="password" type="password" required placeholder="Password">
+                </ion-input>
+                <span slot="error" *ngIf="isSubmitted && loginForm.controls.password.errors?.required">Este campo es
+                  Value is required.
+                </span>
+                <span slot="error" *ngIf="isSubmitted && loginForm.controls.password.errors?.minlength">
+                  Make sure it is at least 5 characters long.
+                </span>
               </ion-item>
             </ion-list>
           </ion-col>
         </ion-row>
         <ion-row>
-         <ion-col>
+          <ion-col>
             <!-- Utilidad css ionic -->
             <ion-button type="submit" expand="full" fill="solid" shape="round" class="ion-text-capitalize">
-              Entrar
+              Log in!
             </ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col class="ion-text-center ion-no-padding">
-             <!-- Utilidad css ionic -->
-            <ion-button class="ion-text-capitalize" fill="clear" shape="round">
-              ¡Registrate ahora!
+            <!-- Utilidad css ionic -->
+            <ion-button (click)="goRegister()" class="ion-text-capitalize" expand="full" fill="outline" shape="round">
+             <span class="dark">No account yet? </span> Sign up
             </ion-button>
           </ion-col>
         </ion-row>

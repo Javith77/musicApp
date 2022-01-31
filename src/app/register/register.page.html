@@ -1,0 +1,83 @@
+<ion-header translucent no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="goLogin()">
+        <ion-icon slot="start" name="arrow-back" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" src="../../assets/checkmark-filled.svg"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid1">
+    <ion-row class="row-img-container">
+      <ion-col class="img-container">
+        <img src="assets/img/banner-register.png" alt="" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="container-login">
+    <ion-row>
+      <ion-col class="container-title">
+        <h1>Create new account</h1>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm()" novalidate>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-icon name="person" color="primary"></ion-icon>
+                <ion-input formControlName="fullname" name="fullname" type="text" required placeholder="Fullname">
+                </ion-input>
+                <span slot="error" *ngIf="isSubmitted && registerForm.controls.fullname.errors?.required">
+                  Value is required.
+                </span>
+              </ion-item>
+              <br />
+              <ion-item>
+                <ion-icon name="mail" color="primary"></ion-icon>
+                <ion-input formControlName="mail" name="mail" type="text" required placeholder="Email">
+                </ion-input>
+                <span slot="error" *ngIf="isSubmitted && registerForm.controls.mail.errors?.required">
+                  Value is required.
+                </span>
+                <span slot="error" *ngIf="isSubmitted && registerForm.controls.mail.errors?.pattern">
+                  Invalid email address.
+                </span>
+              </ion-item>
+              <br />
+                <ion-item>
+                  <ion-icon name="lock-closed" color="primary"></ion-icon>
+                  <ion-input formControlName="password" name="password" type="password" required placeholder="Password">
+                  </ion-input>
+                  <span slot="error" *ngIf="isSubmitted && registerForm.controls.password.errors?.required">
+                    Value is required.
+                  </span>
+                  <span slot="error" *ngIf="isSubmitted && registerForm.controls.password.errors?.minlength">
+                    Make sure it is at least 5 characters long.
+                  </span>
+                </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <!-- Utilidad css ionic -->
+            <ion-button type="submit" expand="full" fill="solid" shape="round" class="ion-text-capitalize">
+              Sign Up!
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </form>
+  </div>
+</ion-content>

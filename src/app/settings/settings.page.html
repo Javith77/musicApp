@@ -1,0 +1,43 @@
+<ion-header translucent no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="goHome()">
+        <ion-icon slot="start" name="arrow-back" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="light"> Settings</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" src="../../assets/checkmark-filled.svg"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" slot="fixed" >
+    <div class="card">
+      <div class="header">
+        <div class="avatar">
+          <ion-avatar (click)="alertChooseOption()">
+            <img src="assets/icon/logo.png"/>
+            <img [src]="photo" alt="" />
+          </ion-avatar>
+        </div>
+      </div>
+      <div class="card-body" *ngIf="user" >
+        <div class="user-meta ion-text-center">
+          <h3 class="playername">{{ user.fullname }}</h3>
+          <h5 class="country">Colombia</h5>
+          <!-- <h6 class="ranking">Followers: <ion-chip>
+              <ion-label>590</ion-label>
+            </ion-chip>
+          </h6> -->
+        </div>
+
+        <ion-button expand="full" color="primary" size="large">{{ user.mail }}</ion-button>
+        <!-- <ion-button expand="full" color="medium" size="large">{{ user.username || '@test' }} on Twitter</ion-button> -->
+        <ion-button expand="full" color="medium" size="large">Change password</ion-button>
+
+      </div>
+    </div>
+</ion-content>

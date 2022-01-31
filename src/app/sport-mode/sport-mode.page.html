@@ -1,0 +1,41 @@
+<ion-header translucent no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="goHome()">
+        <ion-icon slot="start" name="arrow-back" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="light"> Spot mode</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<!-- <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map> -->
+
+  <agm-map
+  *ngIf="currentCenter"
+  [latitude]="currentCenter.lat"
+  [longitude]="currentCenter.lng"
+  [zoom]="defaultZoom"
+  >
+  <agm-marker
+  [latitude]="currentCenter.lat"
+  [longitude]="currentCenter.lng"
+  iconUrl="assets/images/bici.png"
+  >
+  <agm-polyline [strokeColor]="'blue'" *ngIf="coordinates">
+    <agm-polyline-point
+    *ngFor="let coords of coordinates"
+    [latitude]="coords.lat"
+    [longitude]="coords.lng">
+  </agm-polyline-point>
+  </agm-polyline>
+</agm-marker>
+</agm-map>
+</ion-content>
